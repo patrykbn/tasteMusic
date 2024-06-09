@@ -1,0 +1,37 @@
+.searchResults{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBarContainer h3,
+.searchBarContainer input,
+.searchBarContainer a{
+  margin-right: 10px;
+}
+
+.mainSearchText{
+  text-align: center;
+  color: $MainTextColor;
+  margin-bottom: 10px;
+}
+
+.searchBarText{
+  letter-spacing: 0.15em;
+  color: $SubTextColor;
+}
+
+.resultText{
+  margin-top: 30px;
+  text-align: center;
+  color: $MainTextColor;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+}

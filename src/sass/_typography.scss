@@ -1,0 +1,57 @@
+// universal classes for tittles, headers, articles etc.
+
+.fontOne{
+  //regular
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fontTwo{
+  //semibold
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.fontThree{
+  //bold
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.fontFour{
+  //Black
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.mainButton{
+  text-decoration: none;
+  padding-left: 1.0em;
+  padding-right: 1.0em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: $SecondaryColor;
+  border-radius: 0.333em;
+  color: $MainTextColor;
+  font-size: 15px;
+}
+
+.mainButton:hover{
+  color: $SubTextColor;
+}
+
+.searchBar{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 55%;
+}

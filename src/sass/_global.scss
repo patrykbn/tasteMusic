@@ -1,0 +1,158 @@
+// universal styles used in many places
+// for example- buttons that will be used in multiple pages
+@import './variables';
+
+.header-wrapper{
+  position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gradient-Background{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to bottom, rgba($MainBackgroundColor, 0) 30%, rgba($MainBackgroundColor, 1) 97%, $MainBackgroundColor 100%);
+  z-index: 1;
+}
+
+.headerBackground{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.pageTitle{
+  text-align: center;
+  z-index: 2;
+  color: $MainTextColor;
+  transform: translateX(-10px);
+}
+
+.page_title{
+  font-size: 135px;
+  letter-spacing: 0.55em;
+  margin-left: 0.55em;
+  margin-bottom: 1px;
+}
+
+.page_subtitle{
+  font-size: 25px;
+  letter-spacing: 0.6em;
+  margin-left: 0.6em;
+  line-height: 2.0em;
+}
+
+.nav-bar{
+  display: flex;
+  height: 10vh;
+  //padding: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: $MainBackgroundColor;
+}
+
+.navButton{
+  //padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-decoration: none;
+  color: $MainTextColor;
+}
+
+.navButton.active{
+  color: $SubTextColor;
+}
+
+.pages{
+  background-color: $MainBackgroundColor;
+}
+
+.subPage{
+  display: none;
+}
+
+.subPage.active{
+  display: block;
+}
+
+.main-wrapper{
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
+
+.search-wrapper{
+  height: 200px;
+  width: 200px;
+  background-color: rgb(9, 110, 0);
+}
+
+.discover-wrapper{
+  height: 200px;
+  width: 200px;
+  background-color: rgb(55, 0, 255);
+}
+
+.footer{
+  height: 8vh;
+  background-color: $MainBackgroundColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerText{
+  color: $SubTextColor;
+  font-size: 10px;
+}
+
+.pages .subPage.active{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .song_player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+
+    .song_Info{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+.full_Title{
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: $SubTextColor;
+}
+
+.song_Info{
+  margin-top: 20px;
+  font-size: 12px;
+  color: $SubTextColor;
+}
+
+.gap-player.green-audio-player{
+  //width: 250px;
+  //height: 40px;
+  transform: scale(0.70);
+}
+

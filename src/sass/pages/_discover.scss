@@ -1,0 +1,20 @@
+.discoverResult{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDiscoverText{
+  text-align: center;
+  color: $SubTextColor;
+  margin-bottom: 10px;
+  letter-spacing: 0.15em;
+  margin-bottom: 2em;
+}
+
+.secondaryDiscoverText{
+  color: $MainTextColor;
+  text-align: center;
+  margin-bottom: 2em;
+}

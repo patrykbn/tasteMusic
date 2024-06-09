@@ -1,14 +1,14 @@
 import { templates } from '../settings.js';
 import GreenAudioPlayer from '/vendor/audioPlayer/green-audio-player.js';
-import { Data, parseData } from './Data.js'; // Import Data and parseData functions
+import { Data, parseData } from './Data.js';
 
 class HomePage {
   constructor(element, onDataLoaded) {
     const thisHomePage = this;
     thisHomePage.songs = [];
     element.innerHTML = '<h1 class="full_Title fontTwo">Loading, please wait...</h1>';
-    Data().then(({ songs, artists }) => { // Fetch data using Data function
-      thisHomePage.songs = parseData(songs, artists); // Parse data using parseData function
+    Data().then(({ songs, artists }) => {
+      thisHomePage.songs = parseData(songs, artists);
       thisHomePage.renderHome(element, thisHomePage.songs);
       if (typeof onDataLoaded === 'function'){
         onDataLoaded(thisHomePage.songs);

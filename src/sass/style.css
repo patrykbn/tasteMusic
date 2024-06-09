@@ -22,7 +22,7 @@
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: -1;
 }
 
@@ -115,6 +115,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .pages .subPage.active .song_player {
   display: flex;
   justify-content: center;
@@ -123,6 +124,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
 .pages .subPage.active .song_player .song_Info {
   display: flex;
   flex-direction: row;
@@ -221,7 +223,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -514,6 +516,7 @@ template {
   justify-content: center;
   align-items: center;
 }
+
 .pages .subPage.active .song_player {
   display: flex;
   justify-content: center;
@@ -522,6 +525,7 @@ template {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
 .pages .subPage.active .song_player .song_Info {
   display: flex;
   flex-direction: row;
@@ -550,6 +554,7 @@ template {
   width: 100%;
   height: 600px;
 }
+
 .subscribe_container .subscribeBackground {
   position: absolute;
   top: 0;
@@ -559,6 +564,7 @@ template {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
 .subscribe_container .subscribeContent {
   position: relative;
   display: flex;
@@ -567,6 +573,7 @@ template {
   margin: 0 auto;
   z-index: 4;
 }
+
 .subscribe_container .subscribeTitleMain,
 .subscribe_container .subscribeTitleSecondary {
   display: inline-block;
@@ -577,6 +584,7 @@ template {
   margin-right: 0.25em;
   margin-top: 0.4em;
 }
+
 .subscribe_container .subscribeMainInfo {
   display: flex;
   flex-direction: row;
@@ -585,26 +593,31 @@ template {
   margin-bottom: 10px;
   height: 300px;
 }
+
 .subscribe_container .subscribeMainInfo .buttonContainer {
   flex: 1;
   max-width: 40%;
   text-align: center;
   align-self: flex-end;
 }
+
 .subscribe_container .subscribeMainInfo .artistPhoto {
   flex: 1;
   max-width: 40%;
   text-align: left;
   align-self: flex-end;
 }
+
 .subscribe_container .subscribeMainInfo .buttonContainer {
   margin-right: 10px;
   margin-bottom: 10%;
 }
+
 .subscribe_container .subscribeMainInfo .subscribeButton {
   font-size: 25px;
   letter-spacing: 0.1em;
 }
+
 .subscribe_container .subscribeMainInfo .artistName {
   flex: 1;
   max-width: 20%;
@@ -614,9 +627,11 @@ template {
   flex-direction: column;
   margin-left: 10px;
 }
+
 .subscribe_container .subscribeMainInfo .topTextContainer {
   margin-right: 0.1em;
 }
+
 .subscribe_container .subscribeMainInfo .topText {
   text-align: right;
   font-size: 50px;
@@ -624,12 +639,14 @@ template {
   letter-spacing: 0.15em;
   color: #FFF;
 }
+
 .subscribe_container .subscribeMainInfo .middleTextContainer {
   display: inline-flex;
   align-self: flex-end;
   margin-right: -6.3em;
   z-index: 6;
 }
+
 .subscribe_container .subscribeMainInfo .middleText {
   text-align: right;
   font-size: 50px;
@@ -638,18 +655,22 @@ template {
   letter-spacing: 0.15em;
   color: #FFF;
 }
+
 .subscribe_container .subscribeMainInfo .redText {
   color: #CF383E;
 }
+
 .subscribe_container .subscribeMainInfo .artistImage {
   width: 85%;
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
   z-index: 5;
 }
+
 .subscribe_container .subscribeSecondaryInfo {
   width: 95%;
 }
+
 .subscribe_container .infoMainText {
   text-align: right;
   margin-top: 10px;
@@ -658,6 +679,7 @@ template {
   font-size: 23px;
   letter-spacing: 0.15em;
 }
+
 .subscribe_container .infoSecondaryText {
   text-align: right;
   margin: 2px;
@@ -723,4 +745,4 @@ template {
   color: #FFF;
   text-align: center;
   margin-bottom: 2em;
-}/*# sourceMappingURL=style.css.map */
+}

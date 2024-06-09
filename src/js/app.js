@@ -31,18 +31,15 @@ const app = {
     const activePage = link.replace('#','');
     const activeSection = document.getElementById(activePage);
     
-    // Check if the active page is already active
     if (activeSection.classList.contains(classNames.nav.active)) {
-      return; // If already active, do nothing
+      return;
     }
 
-    // Deactivate all sections
     const pages = document.querySelector(select.containerOf.pages);
     pages.querySelectorAll('section').forEach(section => {
       section.classList.remove(classNames.nav.active);
     });
 
-    // Activate the clicked section
     activeSection.classList.add(classNames.nav.active);
 
     if(link == select.navBar.home){

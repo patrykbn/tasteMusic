@@ -41,129 +41,141 @@
 }
 
 .subscribe_container {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  
+  .subscribeBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 600px;
+    z-index: 3;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
   
-    .subscribeBackground {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 3;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-  
-    .subscribeContent {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 auto;
-      z-index: 4;
-    }
-    .subscribeTitleMain,
-    .subscribeTitleSecondary {
+  .subscribeContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 4;
+  }
+
+  .subscribeTitleMain,
+  .subscribeTitleSecondary {
     display: inline-block;
     font-size: 45px;
     color: $MainTextColor;
     letter-spacing: 0.2em;
     margin-left: 0.25em;
     margin-right: 0.25em;
-    margin-top: 0.4em
+    margin-top: 0.4em;
+  }
+  
+  .subscribeMainInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 300px;
+  
+    .buttonContainer{
+      flex: 1;
+      max-width: 40%;
+      text-align: center;
+      align-self: flex-end;
     }
-  
-    .subscribeMainInfo {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      height: 300px;
-  
-      .buttonContainer{
-        flex: 1;
-        max-width: 40%;
-        text-align: center;
-        align-self: flex-end;
-      }
 
-      .artistPhoto {
-        flex: 1;
-        max-width: 40%;
-        text-align: left;
-        align-self: flex-end;
-      }
+    .artistPhoto {
+      flex: 1;
+      max-width: 40%;
+      text-align: left;
+      align-self: flex-end;
+    }
   
-      .buttonContainer {
-        margin-right: 10px;
-        margin-bottom: 10%;
-      }
-      .subscribeButton{
-        font-size: 25px;
-        letter-spacing: 0.1em;
-      }
-      .artistName {
-        flex: 1;
-        max-width: 20%;
-        text-align: center;
-        align-self: flex-end;
-        display: flex;
-        flex-direction: column;
-        margin-left: 10px;
-      }
-      .topTextContainer{
-        margin-right: 0.1em;
-      }
-      .topText{
-        text-align:right;
-        font-size: 50px;
-        margin-bottom: 0;
-        letter-spacing: 0.15em;
-        color: $MainTextColor;
-      }
-      .middleTextContainer{
-        display: inline-flex;
-        align-self: flex-end;
-        margin-right: -6.3em;
-        z-index: 6;
-      }
-      .middleText{
-        text-align: right;
-        font-size: 50px;
-        margin-top: 0;
-        margin-bottom: 0.9em;
-        letter-spacing: 0.15em;
-        color: $MainTextColor;
-      }
-      .redText{
-        color: $SecondaryColor
-      }
-      .artistImage {
-        width: 85%;
-        //height: 100%;
-        object-fit: fill;
-        z-index: 5;
-      }
+    .buttonContainer {
+      margin-right: 10px;
+      margin-bottom: 10%;
     }
-    .subscribeSecondaryInfo{
-        width: 95%;
-      }
-    .infoMainText{
-        text-align: right;
-        margin-top: 10px;
-        margin-bottom: 2px;
-        color: $SubTextColor;
-        font-size: 23px;
-        letter-spacing: 0.15em;
+
+    .subscribeButton{
+      font-size: 25px;
+      letter-spacing: 0.1em;
     }
-    .infoSecondaryText{
-        text-align: right;
-        margin: 2px;
-        color: $MainTextColor;
-        font-size: 20px;
-        letter-spacing: 0.25em;
+
+    .artistName {
+      flex: 1;
+      max-width: 20%;
+      text-align: center;
+      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+
+    .topTextContainer{
+      margin-right: 0.1em;
+    }
+
+    .topText{
+      text-align: right;
+      font-size: 50px;
+      margin-bottom: 0;
+      letter-spacing: 0.15em;
+      color: $MainTextColor;
+    }
+
+    .middleTextContainer{
+      display: inline-flex;
+      align-self: flex-end;
+      margin-right: -6.3em;
+      z-index: 6;
+    }
+
+    .middleText{
+      text-align: right;
+      font-size: 50px;
+      margin-top: 0;
+      margin-bottom: 0.9em;
+      letter-spacing: 0.15em;
+      color: $MainTextColor;
+    }
+
+    .redText{
+      color: $SecondaryColor;
+    }
+
+    .artistImage {
+      width: 85%;
+      //height: 100%;
+      object-fit: fill;
+      z-index: 5;
     }
   }
+
+  .subscribeSecondaryInfo{
+    width: 95%;
+  }
+
+  .infoMainText{
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    color: $SubTextColor;
+    font-size: 23px;
+    letter-spacing: 0.15em;
+  }
+
+  .infoSecondaryText{
+    text-align: right;
+    margin: 2px;
+    color: $MainTextColor;
+    font-size: 20px;
+    letter-spacing: 0.25em;
+  }
+}
   

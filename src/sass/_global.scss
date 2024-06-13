@@ -41,6 +41,12 @@
   letter-spacing: 0.55em;
   margin-left: 0.55em;
   margin-bottom: 1px;
+  @media screen and (max-width: 700px){
+    font-size: 92px;
+  }
+  @media screen and (max-width: 500px){
+    font-size: 66px;
+  }
 }
 
 .page_subtitle{

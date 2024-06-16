@@ -1,6 +1,7 @@
 import { select, templates } from '../settings.js';
 import GreenAudioPlayer from '/vendor/audioPlayer/green-audio-player.js';
 import { Data, parseData } from './Data.js';
+import app from '../app.js';
 
 class DiscoverPage {
   constructor(element) {
@@ -41,12 +42,23 @@ class DiscoverPage {
     const thisDiscoverPage = this;
     try {
       const { songs, artists } = await Data();
-
+  
       thisDiscoverPage.allSongs = parseData(songs, artists);
-
+  
       if (Array.isArray(thisDiscoverPage.allSongs) && thisDiscoverPage.allSongs.length > 0) {
-        const randomIndex = Math.floor(Math.random() * thisDiscoverPage.allSongs.length);
-        thisDiscoverPage.randomSong = thisDiscoverPage.allSongs[randomIndex];
+        const matchingSongs = thisDiscoverPage.allSongs.filter(song => {
+          const songCategories = song.songCatForFilter;
+          return songCategories.some(category => app.playedCategories.includes(category));
+        });
+  
+        if (matchingSongs.length > 0) {
+          const randomIndex = Math.floor(Math.random() * matchingSongs.length);
+          thisDiscoverPage.randomSong = matchingSongs[randomIndex];
+        } else {
+          // If no matching songs found, pick a random song from all songs
+          const randomIndex = Math.floor(Math.random() * thisDiscoverPage.allSongs.length);
+          thisDiscoverPage.randomSong = thisDiscoverPage.allSongs[randomIndex];
+        }
       } else {
         console.error('No songs available to pick a random one.');
       }
@@ -54,6 +66,7 @@ class DiscoverPage {
       console.error('Error fetching or parsing data:', error);
     }
   }
+  
 }
 
 export default DiscoverPage;

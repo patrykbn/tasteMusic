@@ -2,6 +2,12 @@
 // for example- buttons that will be used in multiple pages
 @import './variables';
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 .header-wrapper{
   position: relative;
   height: 90vh;

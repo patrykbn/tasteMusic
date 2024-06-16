@@ -33,14 +33,17 @@
 </header>
 <div class="pages">
     <section id="home" class="subPage homePage">
+      <div class="main-category-wrapper container"></div>
       <div class="main-wrapper container"></div>
     </section>
     <section id="search" class="subPage searchPage">
-        <div class="search_container col-lg-6 col-md-7 col-sm-10 col-12">
+        <div class="search_container col-xl-7 col-lg-8 col-md-9 col-sm-10 col-12">
           <h1 class="mainSearchText fontThree">SEARCH</h1>
           <div class="searchBarContainer">
             <h3 class="searchBarText fontOne">Name:</h3>
-            <input type="text" class="searchBar fontOne" id="searchBar" placeholder="Search...">
+            <input type="text" class="searchBar name-search fontOne" id="name-search" placeholder="Search...">
+            <h3 class="searchBarText fontOne">Category:</h3>
+            <input type="text" class="searchBar category-search fontOne" id="category-search" placeholder="Search...">
             <a href="#search" class="Button1 mainButton searchButton fontTwo">Search</a>
           </div>
           <div class="searchResults"></div>
@@ -63,8 +66,14 @@
 </footer>
 
 <script id="template-main-wrapper" type="text/x-handlebars-template">
+  <div class="all-categories-container col-xl-7 col-lg-8 col-md-9 col-sm-10 col-11">
+    <h1 class="all-categories-text fontTwo">Categories:</h1>
+    {{#each allSongCategories}}
+      <a href="#{{{this}}}" id="{{{this}}}" class="category-link fontOne">{{{this}}}</a>
+    {{/each}}
+  </div>
 {{#each songsDataforTemplate}}
-<div class="song_player col-xl-3 col-lg-4 col-md-5 col-sm-6 col-8">
+<div class="song_player col-xl-3 col-lg-4 col-md-5 col-sm-6 col-8 {{{songCatForFilter}}}">
   <div class="full_Title fontTwo">{{{fullName}}}</div>
   <div class="gap-player">
     <audio>

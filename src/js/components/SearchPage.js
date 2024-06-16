@@ -13,7 +13,6 @@ class SearchPage {
       event.preventDefault();
       thisSearchPage.songFilter();
     });
-    //thisSearchPage.songFilter();
   }
 
   renderSearch(element, searchedSongs) {
@@ -39,19 +38,27 @@ class SearchPage {
     const thisSearchPage = this;
   
     try {
-      // Fetch data using Data function from Data.js
       const { songs, artists } = await Data();
       
-      // Parse fetched data
       thisSearchPage.allSongs = parseData(songs, artists);
   
-      // Continue with the search filtering
-      const searchInput = document.querySelector(select.inputs.searchInput).value.toLowerCase();
+      const nameSearchInput = document.querySelector(select.inputs.nameSearchInput).value.trim().toLowerCase();
+      const categorySearchInput = document.querySelector(select.inputs.categorySearchInput).value.trim().toLowerCase();
   
-      // Filter songs based on the search input
-      const searchedSongs = thisSearchPage.allSongs.filter(song => song.fullName.toLowerCase().includes(searchInput));
+      let searchedSongs = thisSearchPage.allSongs;
   
-      // Set the number of matched songs message
+      if (nameSearchInput !== '') {
+        searchedSongs = searchedSongs.filter(song => song.fullName.toLowerCase().includes(nameSearchInput));
+      }
+  
+      if (categorySearchInput !== '') {
+        searchedSongs = searchedSongs.filter(song => {
+          const categories = song.songCategories.toLowerCase().split(',').map(category => category.trim());
+          
+          return categories.some(category => category.includes(categorySearchInput));
+        });
+      }
+  
       let numberOfMatches;
       if (searchedSongs.length === 0) {
         numberOfMatches = 'We couldn\'t find what you were searching for.';
@@ -61,19 +68,16 @@ class SearchPage {
         numberOfMatches = `We have found ${searchedSongs.length} songs...`;
       }
   
-      // Update the searchedSongs object with filtered songs and number of matches
       thisSearchPage.searchedSongs = {
         songsDataforSearchTemplate: searchedSongs,
         numberOfMatches: numberOfMatches
       };
   
-      // Initiate renderSearch with the updated searchedSongs data
       thisSearchPage.renderSearch(thisSearchPage.dom.wrapper, thisSearchPage.searchedSongs);
     } catch (error) {
       console.error('Error fetching or parsing data:', error);
     }
   }
-
   
 }
 export default SearchPage;

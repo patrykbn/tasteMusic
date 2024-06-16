@@ -5,6 +5,7 @@ import DiscoverPage from './components/DiscoverPage.js';
 
 const app = {
   clickedPage: '',
+  playedCategories: [],
  
   navBarInit: function() {
     const navButtons = document.querySelectorAll('.navButton');
@@ -54,6 +55,17 @@ const app = {
     }
   },
 
+  addToPlayedCategories: function(categoriesString) {
+    const categories = categoriesString.replace('Categories: ', '').split(',').map(category => category.trim());
+    
+    categories.forEach(category => {
+      if (!this.playedCategories.includes(category)) {
+        this.playedCategories.push(category);
+      }
+    });
+    console.log('test', this.playedCategories);
+  },
+
   initHome: function(){
     const thisApp = this;
     const homeContainer = document.querySelector(select.containerOf.homePage);
@@ -77,4 +89,22 @@ document.addEventListener('DOMContentLoaded', function() {
   app.navBarInit();
   app.pageInit(settings.pages.defaultPage);
 });
- 
+
+document.addEventListener('DOMContentLoaded', function() {
+  app.navBarInit();
+  app.pageInit(settings.pages.defaultPage);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('gap-player')) {
+    //console.log('works',event.target);
+    const playerContainer = event.target.closest('.song_player');
+    const categories = playerContainer.querySelector('.categories').textContent.trim();
+    //console.log('works2',categories);
+    app.addToPlayedCategories(categories);
+    
+    console.log('Played categories:', app.playedCategories); // Check the updated playedCategories array
+  }
+});
+
+export default app;

@@ -35,3 +35,14 @@
   font-size: 13px;
   letter-spacing: 0.15em;
 }
+
+.searchBarText,
+.searchBar,
+.searchButton{
+  @media screen and (max-width: 510px){
+    font-size: 14px;
+  }
+  @media screen and (max-width: 360px){
+    font-size: 12px;
+  }
+}

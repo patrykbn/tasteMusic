@@ -36,6 +36,7 @@ const parseData = function(songs, artists) {
       fullName: fullSongName,
       fileName: song.filename,
       songCategories: song.categories.join(', '),
+      songCatForFilter: song.categories,
     };
   
     songsData.push(songObj);
@@ -43,6 +44,18 @@ const parseData = function(songs, artists) {
   
   return songsData;
 };
+
+const getCategories = function(songs) {
+  const allCategories = new Set();
   
-export { Data, parseData };
+  for (let song of songs) {
+    for (let category of song.categories){
+      allCategories.add(category);
+    }
+  }
+  console.log('all categories', allCategories);
+  return Array.from(allCategories);
+};
+  
+export { Data, parseData, getCategories};
   

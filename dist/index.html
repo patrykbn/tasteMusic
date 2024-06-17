@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Taste</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./vendor/bootstrap/bootstrap-grid.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" type="text/css" href="./vendor/audioPlayer/green-audio-player.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="">
+        <div class="header-wrapper">
+            <div class="gradient-Background"></div>
+            <img src="./images/background.jpg" alt="background" class="headerBackground col">
+            <div class="pageTitle">
+                <h1 class="page_title fontFour">TASTE</h1>
+                <h2 class="page_subtitle fontFour">ENGAGE<br>IN<br>ART</h2>
+            </div>
+        </div>
+        <div class="nav-bar col">
+            <a href="#home" class="navButton fontThree active">HOME</a>
+            <a href="#search" class="navButton fontThree">SEARCH</a>
+            <a href="#discover" class="navButton fontThree">DISCOVER</a>
+        </div>
+    </div>
+</header>
+<div class="pages">
+    <section id="home" class="subPage homePage">
+      <div class="main-category-wrapper container"></div>
+      <div class="main-wrapper container"></div>
+    </section>
+    <section id="search" class="subPage searchPage">
+        <div class="search_container col-xl-7 col-lg-8 col-md-9 col-sm-10 col-12">
+          <h1 class="mainSearchText fontThree">SEARCH</h1>
+          <div class="searchBarContainer">
+            <h3 class="searchBarText fontOne">Name:</h3>
+            <input type="text" class="searchBar name-search fontOne" id="name-search" placeholder="Search...">
+            <h3 class="searchBarText fontOne">Category:</h3>
+            <input type="text" class="searchBar category-search fontOne" id="category-search" placeholder="Search...">
+            <a href="#search" class="Button1 mainButton searchButton fontTwo">Search</a>
+          </div>
+          <div class="searchResults"></div>
+        </div>
+    </section>
+    <section id="discover" class="subPage discoverPage">
+      <div class="discover_container col-5">
+        <h1 class="mainDiscoverText fontThree">DISCOVER</h1>
+        <h3 class="secondaryDiscoverText fontOne">Give it a try!</h3>
+      </div>
+      <div class="discoverResult"></div>
+      <a href="#discover" class="Button1 mainButton discoverButton fontTwo">Discover...</a>
+    </section>
+</div>
+
+<footer>
+    <div class="footer">
+        <span class="footerText fontOne">All rights reserved</span>
+    </div>
+</footer>
+
+<script id="template-main-wrapper" type="text/x-handlebars-template">
+  <div class="all-categories-container col-xl-7 col-lg-8 col-md-9 col-sm-10 col-11">
+    <h1 class="all-categories-text fontTwo">Categories:</h1>
+    {{#each allSongCategories}}
+      <a href="#{{{this}}}" id="{{{this}}}" class="category-link fontOne">{{{this}}}</a>
+    {{/each}}
+  </div>
+{{#each songsDataforTemplate}}
+<div class="song_player col-xl-3 col-lg-4 col-md-5 col-sm-6 col-8 {{{songCatForFilter}}}">
+  <div class="full_Title fontTwo">{{{fullName}}}</div>
+  <div class="gap-player">
+    <audio>
+        <source src="./songs/{{{fileName}}}" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="song_Info">
+    <div class="categories fontOne">Categories: {{{songCategories}}}</div>
+    <div class="ranking fontOne">#{{{songRanking}}} in the ranking</div>
+  </div>
+</div>
+{{/each}}
+<div class="subscribe_container">
+  <img src="./images/subscribe.jpg" alt="subscribe" class="subscribeBackground">
+  <div class="subscribeContent col-lg-7 col-md-9 col-sm-12 col-12">
+    <div class="subscribeTitle">
+      <h1 class="subscribeTitleMain fontTwo">SUBSCRIBE </h1>
+      <h1 class="subscribeTitleSecondary fontFour"> NOW</h1>
+    </div>
+    <div class="subscribeMainInfo">
+      <div class="buttonContainer">
+        <a href="#subscribe" class="Button1 mainButton subscribeButton fontTwo">JOIN NOW</a>
+      </div>
+      <div class="artistName fontThree">
+        <div class="topTextContainer">
+          <h1 class="topText fontThree">Dean</h1>
+        </div>
+        <div class="middleTextContainer">
+          <h1 class="middleText fontThree">Hen</h1>
+          <h1 class="middleText fontThree redText">son</h1>
+        </div>
+      </div>
+      <div class="artistPhoto">
+        <img src="./images/artist.jpg" alt="artist" class="artistImage">
+      </div>
+    </div>
+    <div class="subscribeSecondaryInfo">
+      <h2 class="infoMainText fontThree">NEW ALBUM</h2>
+      <h2 class="infoSecondaryText fontTwo">Available only for subscribers</h2>
+    </div>
+  </div>
+</div>
+</script>
+<script id="template-search-wrapper" type="text/x-handlebars-template">
+  <h3 class="resultText fontOne">{{numberOfMatches}}</h3>
+  {{#each songsDataforSearchTemplate}}
+  <div class="song_player col-10">
+    <div class="full_Title fontTwo">{{{fullName}}}</div>
+    <div class="gap-player">
+      <audio>
+        <source src="./songs/{{{fileName}}}" type="audio/mpeg">
+      </audio>
+    </div>
+    <div class="song_Info">
+      <div class="categories fontOne">Categories: {{{songCategories}}}</div>
+      <div class="ranking fontOne">#{{{songRanking}}} in the ranking</div>
+    </div>
+  </div>
+{{/each}}
+</script>
+<script id="template-discover-wrapper" type="text/x-handlebars-template">
+  <div class="song_player col-8">
+    <div class="full_Title fontTwo">{{{fullName}}}</div>
+    <div class="gap-player">
+      <audio>
+          <source src="./songs/{{{fileName}}}" type="audio/mpeg">
+      </audio>
+    </div>
+    <div class="song_Info">
+      <div class="categories fontOne">Categories: {{{songCategories}}}</div>
+      <div class="ranking fontOne">#{{{songRanking}}} in the ranking</div>
+    </div>
+  </div>
+</script>
+
+<script src="js/app.js" type="module"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+</body>
+</html>

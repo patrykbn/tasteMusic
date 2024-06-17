@@ -1,6 +1,7 @@
 import { select, templates } from '../settings.js';
 import GreenAudioPlayer from '/vendor/audioPlayer/green-audio-player.js';
 import { Data, parseData } from './Data.js';
+import { personalizeListener } from './PersonalizedDiscover.js';
 
 class SearchPage {
   constructor(element) {
@@ -32,6 +33,7 @@ class SearchPage {
       selector: '.gap-player',
       stopOthersOnPlay: true,
     });
+    personalizeListener(element);
   }
 
   async songFilter() {

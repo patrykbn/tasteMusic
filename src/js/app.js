@@ -55,7 +55,7 @@ const app = {
     }
   },
 
-  addToPlayedCategories: function(categoriesString) {
+  /*addToPlayedCategories: function(categoriesString) {
     const categories = categoriesString.replace('Categories: ', '').split(',').map(category => category.trim());
     
     categories.forEach(category => {
@@ -64,7 +64,7 @@ const app = {
       }
     });
     console.log('test', this.playedCategories);
-  },
+  },*/
 
   initHome: function(){
     const thisApp = this;
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
   app.pageInit(settings.pages.defaultPage);
 });
 
-document.addEventListener('click', function(event) {
+/*document.addEventListener('click', function(event) {
   if (event.target.classList.contains('gap-player')) {
     //console.log('works',event.target);
     const playerContainer = event.target.closest('.song_player');
@@ -105,6 +105,6 @@ document.addEventListener('click', function(event) {
     
     console.log('Played categories:', app.playedCategories); // Check the updated playedCategories array
   }
-});
+});*/
 
 export default app;

@@ -53,7 +53,7 @@ const getCategories = function(songs) {
       allCategories.add(category);
     }
   }
-  console.log('all categories', allCategories);
+  //console.log('all categories', allCategories);
   return Array.from(allCategories);
 };
   

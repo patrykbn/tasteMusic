@@ -1,19 +1,19 @@
 import { classNames, select, templates } from '../settings.js';
 import GreenAudioPlayer from '/vendor/audioPlayer/green-audio-player.js';
 import { Data, parseData, getCategories } from './Data.js';
+import { personalizeListener} from './PersonalizedDiscover.js';
 
 class HomePage {
   constructor(element, onDataLoaded) {
     const thisHomePage = this;
     thisHomePage.songs = [];
     thisHomePage.allCategories = [];
-    thisHomePage.pickedCategory = []; // Initialize pickedCategory here
+    thisHomePage.pickedCategory = [];
 
     element.innerHTML = '<h1 class="full_Title fontTwo">Loading, please wait...</h1>';
     Data().then(({ songs, artists }) => {
       thisHomePage.songs = parseData(songs, artists);
       thisHomePage.allCategories = getCategories(songs);
-      console.log(thisHomePage.allCategories);
       thisHomePage.renderHome(element, thisHomePage.songs, thisHomePage.allCategories);
       if (typeof onDataLoaded === 'function') {
         onDataLoaded(thisHomePage.songs);
@@ -38,6 +38,8 @@ class HomePage {
     });
     thisHomePage.toggleActiveCategories();
     thisHomePage.attachCategoryClickListener();
+
+    personalizeListener(element);
   }
   toggleActiveCategories() {
     const thisHomePage = this;

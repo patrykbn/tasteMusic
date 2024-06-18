@@ -42,8 +42,8 @@ export const classNames = {
 
 export const settings = {
   db: {
-    url1: '//localhost:3131',
-    //url1:'//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
+    //url1: '//localhost:3131',
+    url1:'//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
     url2: '//localhost:3000',
     home: 'home',
     search: 'search',
